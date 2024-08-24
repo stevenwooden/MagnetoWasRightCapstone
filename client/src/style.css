@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+
+
+
+ul {
+    
+    font-size: 30px;
+    
+    /* margin-left: 20%; */
+}
+li.a{
+    
+    margin: 15%;
+
+}
+
+.footer {
+    text-align: center;
+    font-size: 12.5px;
+    padding-top: 2.5% ;
+    margin-top: 5%;
+    padding-bottom: 2.5%;
+    
+}
+.home-image{
+    width: 100%;
+
+    /* margin-top: 5%; */
+}
+h1 {
+    font-size: 5vw;
+    font-family: 'Anton SC', sans-serif;
+}
+.charList {
+    margin-left:10%;
+    margin-top: 5%
+}
+
+.welcome{    /* margin-top: 10%;
+    margin-left: 10%; */
+    margin: 5%;
+
+}
+.message {
+    font-size: 2vw ;
+    margin: 10px;
+    padding: 30px
+}
+.feature {
+    width: 100%;
+    
+    border: #721CB8 solid 2px;
+    padding: 2%;
+    margin-bottom: 2%;
+
+    /* margin-left: 10%; */
+}
+/* .section-index {
+    margin: 10%;
+
+} */
+/* .main-index {
+    margin-top:10% %;
+    
+} */
+.blog {
+    margin-top: 10%;
+}
+.background{
+    background-color: #721CB8;
+    color: white;
+    padding: 3%;
+    text-align: center;
+}
+.itemImage{
+
+    border: solid thick 1px purple;
+}
+
+.linkTitle {
+    font-family: 'Anton SC', sans-serif;
+    margin: 4%;
+    font-size: 2vw;  
+    color: #721CB8;  
+}
+.shop {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    background-color: #721CB8;
+}
+.caption {
+    color: #721CB8;
+    }
+
+.carouselCaption{
+    font-family:'Anton SC', sans-serif;
+    background:white;
+    padding: 10;
+    color:#721CB8
+}
+@media screen and (max-width: 992px){
+    .feature {
+        display: block;
+        width: 60%; 
+        margin:  auto;
+        margin-bottom: 2%;
+    }
+    
+}
+@media screen {
+    
+}

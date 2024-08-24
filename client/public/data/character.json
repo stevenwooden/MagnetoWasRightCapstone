@@ -1,0 +1,64 @@
+[
+    {
+        "alias": "Magneto", 
+        "powers": "Ability to control all metal",
+        "image": "/assets/images/magneto.jpg"
+        },
+    {
+        "alias": "Cyclops",
+        "powers": "Project Optic Beams from eyes", 
+        "image":"/assets/images/cyclops.jpg"
+        },
+    {
+        "alias": "Marvel Girl",
+        "powers": "Telekinetic and Telepathy" ,
+        "image":"/assets/images/marvelgirl.jpg" 
+    },
+    {
+        "alias": "Storm" ,
+        "powers": "Ability to control the weather",
+        "image":"/assets/images/storm.jpg"
+        },
+    {
+        "alias": "Nightcrawler",
+        "powers":"Teleportation",
+        "image":"/assets/images/NightCrawler.jpg" 
+        },
+    {
+        "alias": "Wolverive",
+        "powers":"Superhuman healing and retractable metal claws" ,
+        "image":"/assets/images/wolverine.jpg"
+        },
+    {
+        "alias": "Beast",
+        "powers":"Superhuman strength, durability, agility, reflexes, and speed" ,
+        "image":"/assets/images/beast.jpg"
+        },
+    {
+        "alias": "Mystique",
+        "powers":"Shapeshifter",
+        "image": "/assets/images/mystique.jpg"  
+
+        },
+    {
+        "alias": "Sabretooth",
+        "powers":"Superhuman healing factor, strength and sharp claws",
+        "image": "/assets/images/Sabretooth.jpg"
+        },
+    {
+        "alias": "Jubilee"
+        ,"powers": "Create and shoot combustable fireworks from hands" ,
+        "image" : "/assets/images/jubilee.jpg"
+
+        },
+    {
+        "alias": "Gambit",
+        "powers": "Able to kinetically charge objects to explode by a touch",
+        "image":"/assets/images/gambit.jpg"
+        },
+    {
+        "alias": "Rogue",
+        "powers": "Can absorb super powers, life force and memoryies with a touch",
+        "image": "/assets/images/rogue.jpg" 
+        }
+]
