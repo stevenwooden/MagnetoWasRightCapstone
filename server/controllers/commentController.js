@@ -1,5 +1,5 @@
 "use strict";
-let Models = require("../models");
+let Models = require("../models/comment");
 
 const getComment = (res) => {
     Models.Comment.find({})

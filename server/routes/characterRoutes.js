@@ -3,19 +3,19 @@ let router = express.Router();
 let characterController = require("../controllers/characterController");
 
 router.get('/', (req, res) => {
-    characterController.getCharacter(res);
+    characterController.getCharacters(req, res);
 })
 
 router.post('/create', (req, res) => {
-    characterController.createCharacter(req.body, res);
+    characterController.createOrUpdateCharacter(req.body, res);
 })
 
-router.put('/:id', (req, res) => {
-    characterController.updateCharacter(req, res)
+router.get('/:id', (req, res) => {
+    characterController.getCharacterById(req, res)
 })
 
 router.delete('/:id', (req, res) => {
-    characterController.deleteCharacter(req, res)
+    characterController.deleteCharacterById(req, res)
 })
 module.exports = router;
 

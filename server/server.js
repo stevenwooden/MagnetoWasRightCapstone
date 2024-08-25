@@ -4,7 +4,6 @@ const dbConnect = require("./dbConnect")
 const characterRoutes = require("./routes/characterRoutes");
 // const fetchComicVineData = require("./services/comicVineAPI");
 const commentRoutes = require("./routes/commentRoutes");
-const newsRoutes= require("./routes/newsRoutes");
 const postRoutes = require("./routes/postRoutes");
 
 const PORT = process.env.PORT || 8080;
@@ -14,7 +13,6 @@ app.use(express.json());
 // dbConnect().then(async () => {
 //     await fetchComicVineData();
 
-app.use('/api/news', newsRoutes);
 app.use('/api/character', characterRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/comment', commentRoutes);

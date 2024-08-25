@@ -1,8 +1,6 @@
 'use strict'
 
-module.exports = {
-    News: require('./news')
-}
+
 
 module.exports = {
     Character: require('./character')

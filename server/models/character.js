@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 
 
 const characterSchema = new mongoose.Schema({
-    alias: { type: String, required: true},
-    powers: {type: String, required: true},
-    image: {type: String, required: true},
+    name: { type: String, required: true},
+    description: {type: String, required: true},
+    thumbnail: {
+        path: String,
+        extension: String,
+    }
 });
 
 module.exports = mongoose.model('character', characterSchema);
