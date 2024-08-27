@@ -1,14 +1,8 @@
 'use strict'
 
 module.exports = {
-    characterController: require('./characterController')
-};
-
-
-module.exports = {
-    commentController: require('./commentController')
-};
-
-module.exports = {
+    characterController: require('./characterController'),
+    commentController: require('./commentController'),
     postController: require('./postController')
 };
+

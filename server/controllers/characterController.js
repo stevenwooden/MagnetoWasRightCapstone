@@ -1,69 +1,66 @@
-
 const axios = require('axios');
-const md5 = require('md5');
 const mongoose = require('mongoose');
-const Character = require('../models/character');
+const Character = require('../models');
 
-const publicKey = process.env.MARVEL_PUBLIC_KEY;
-const privateKey = process.env.MARVEL_PRIVATE_KEY;
+const comicVineApiKey = process.env.COMIC_VINE_API_KEY;
 const mongoURI = process.env.DB_URI;
-const ts = new Date().getTime();
-const hash = md5(ts + privateKey + publicKey);
 
-// Create or Update Character
-const createOrUpdateCharacter = async (req, res) => {
-    const { nameStartsWith = 'x-men', limit= 50 } = req.query;
-
+// Fetch and Save/Update Characters from Comic Vine API
+const fetchAndSaveCharacters = async () => {
     try {
-        const response = await axios.get('https://gateway.marvel.com/v1/public/characters', {
+        const response = await axios.get('https://comicvine.gamespot.com/api/characters', {
             params: {
-                apikey: publicKey,
-                ts: ts,
-                hash: hash,
-                nameStartsWith: nameStartsWith || 'x-men',
-                limit: limit || 10
+                api_key: comicVineApiKey,
+                filter: 'name:x-men', // Filter for X-Men characters
+                format: 'json',
+                limit: 50, // Adjust limit as needed
+                field_list: 'id,name,description,image,aliases,powers' // Specify the fields you want
             }
         });
 
-        const characters = response.data.data.results;
+        const characters = response.data.results;
 
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         });
 
         for (const char of characters) {
-            const { id, name, description, thumbnail } = char;
+            const { id, name, description, image, aliases, powers } = char;
 
             // Upsert operation: if character exists, update; otherwise, create
             await Character.findOneAndUpdate(
                 { id },
                 {
                     name,
+                    alias: aliases,
+                    powers: powers.map(power => power.name), // Assuming powers is an array of objects
                     description,
-                    thumbnail: {
-                        path: thumbnail.path,
-                        extension: thumbnail.extension
+                    image: {
+                        small_url: image.small_url,
+                        medium_url: image.medium_url,
+                        large_url: image.large_urlgf
                     }
                 },
                 { upsert: true, new: true }
             );
         }
 
-        res.status(200).json({ message: 'Characters have been saved/updated successfully' });
+        console.log
     } catch (error) {
+        console.error('Error fetching or saving characters', error);
         res.status(500).json({ message: 'Error fetching or saving characters', error });
     } finally {
         mongoose.disconnect();
     }
 };
 
-// Get Characters (Read)
+// Get All Characters
 const getCharacters = async (req, res) => {
     try {
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         });
 
         const characters = await Character.find();
@@ -75,14 +72,14 @@ const getCharacters = async (req, res) => {
     }
 };
 
-// Get a Single Character by ID (Read)
+// Get a Single Character by ID
 const getCharacterById = async (req, res) => {
     const { id } = req.params;
 
     try {
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         });
 
         const character = await Character.findOne({ id });
@@ -99,14 +96,14 @@ const getCharacterById = async (req, res) => {
     }
 };
 
-// Delete a Character by ID (Delete)
+// Delete a Character by ID
 const deleteCharacterById = async (req, res) => {
     const { id } = req.params;
 
     try {
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         });
 
         const result = await Character.deleteOne({ id });
@@ -124,7 +121,7 @@ const deleteCharacterById = async (req, res) => {
 };
 
 module.exports = {
-    createOrUpdateCharacter,
+    fetchAndSaveCharacters,
     getCharacters,
     getCharacterById,
     deleteCharacterById
@@ -133,20 +130,8 @@ module.exports = {
 
 
 
-
-
-
-
-
-
-
 // "use strict";
 // const Models = require("../models");
-// const md5 = require('md5');
-// const mongoose
-
-
-
 
 // const getCharacter = (res) => {
 //     Models.Character.find({})
@@ -190,25 +175,25 @@ module.exports = {
 //     getCharacter, createCharacter, updateCharacter, deleteCharacter
 // }
 
-// const Character = require('../models/Character');
+// // const Character = require('../models/Character');
 
-// exports.createCharacter = async (req, res) => {
-//   const character = new Character(req.body);
-//   await character.save();
-//   res.status(201).send(character);
-// };
+// // exports.createCharacter = async (req, res) => {
+// //   const character = new Character(req.body);
+// //   await character.save();
+// //   res.status(201).send(character);
+// // };
 
-// exports.getCharacters = async (req, res) => {
-//   const characters = await Character.find();
-//   res.status(200).send(characters);
-// };
+// // exports.getCharacters = async (req, res) => {
+// //   const characters = await Character.find();
+// //   res.status(200).send(characters);
+// // };
 
-// exports.updateCharacter = async (req, res) => {
-//   const character = await Character.findByIdAndUpdate(req.params.id, req.body, { new: true });
-//   res.status(200).send(character);
-// };
+// // exports.updateCharacter = async (req, res) => {
+// //   const character = await Character.findByIdAndUpdate(req.params.id, req.body, { new: true });
+// //   res.status(200).send(character);
+// // };
 
-// exports.deleteCharacter = async (req, res) => {
-//   await Character.findByIdAndDelete(req.params.id);
-//   res.status(204).send();
-// };
+// // exports.deleteCharacter = async (req, res) => {
+// //   await Character.findByIdAndDelete(req.params.id);
+// //   res.status(204).send();
+// // };

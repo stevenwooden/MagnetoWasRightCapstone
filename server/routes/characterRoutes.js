@@ -6,9 +6,9 @@ router.get('/', (req, res) => {
     characterController.getCharacters(req, res);
 })
 
-router.post('/create', (req, res) => {
-    characterController.createOrUpdateCharacter(req.body, res);
-})
+// router.post('/create', (req, res) => {
+//     characterController.fetchAndSaveCharacters(req.body, res);
+// })
 
 router.get('/:id', (req, res) => {
     characterController.getCharacterById(req, res)

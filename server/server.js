@@ -2,22 +2,25 @@ const express = require("express");
 require("dotenv").config();
 const dbConnect = require("./dbConnect")
 const characterRoutes = require("./routes/characterRoutes");
-// const fetchComicVineData = require("./services/comicVineAPI");
-const commentRoutes = require("./routes/commentRoutes");
 const postRoutes = require("./routes/postRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
-const PORT = process.env.PORT || 8080;
+const Controllers = require("./controllers")
+
 const app = express();
 app.use(express.json());
 
-// dbConnect().then(async () => {
-//     await fetchComicVineData();
 
 app.use('/api/character', characterRoutes);
+
+
 app.use('/api/post', postRoutes);
+
+
 app.use('/api/comment', commentRoutes);
 
-
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    Controllers.characterController.fetchAndSaveCharacters();
 });
