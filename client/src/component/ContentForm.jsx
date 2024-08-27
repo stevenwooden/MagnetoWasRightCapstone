@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import axios from 'axios';
+
 
 const ContentForm = () => {
     const [author, setAuthor] = useState('');
@@ -15,8 +15,7 @@ const ContentForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-        await axios.post('http://localhost:3000/api/posts', {
+        const postData = {
             author,
             link,
             video,
@@ -24,19 +23,33 @@ const ContentForm = () => {
             title,
             article,
             date,
-        });
-        alert('Post added successfully!');
-        // Reset form fields
-        setAuthor('');
-        setLink('');
-        setVideo('');
-        setImage('');
-        setTitle('');
-        setArticle('');
-        setDate('');
+        };
+
+        try {
+            const response = await fetch('http://localhost:3000/api/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData),
+            });
+
+            if (response.ok) {
+                alert('Post added successfully!');
+                // Reset form fields
+                setAuthor('');
+                setLink('');
+                setVideo('');
+                setImage('');
+                setTitle('');
+                setArticle('');
+                setDate('');
+            } else {
+                throw new Error('Failed to add post');
+            }
         } catch (error) {
-        console.error('Error adding post:', error);
-        alert('Failed to add post. Please try again.');
+            console.error('Error adding post:', error);
+            alert('Failed to add post. Please try again.');
         }
     };
 
