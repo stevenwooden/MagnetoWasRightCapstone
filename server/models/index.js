@@ -3,7 +3,7 @@
 
 
 module.exports = {
-    Character: require('./character'),
+    // Character: require('./character'),
     Post: require('./post'),
     Comment: require('./comment')
 }

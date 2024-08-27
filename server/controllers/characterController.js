@@ -6,7 +6,7 @@ const comicVineApiKey = process.env.COMIC_VINE_API_KEY;
 const mongoURI = process.env.DB_URI;
 
 // Fetch and Save/Update Characters from Comic Vine API
-const fetchAndSaveCharacters = async () => {
+const fetchAndSaveCharacters = async (req, res) => {
     try {
         const response = await axios.get('https://comicvine.gamespot.com/api/characters', {
             params: {
@@ -20,10 +20,7 @@ const fetchAndSaveCharacters = async () => {
 
         const characters = response.data.results;
 
-        await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        // await mongoose.connect(mongoURI);
 
         for (const char of characters) {
             const { id, name, description, image, aliases, powers } = char;
@@ -58,10 +55,7 @@ const fetchAndSaveCharacters = async () => {
 // Get All Characters
 const getCharacters = async (req, res) => {
     try {
-        await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(mongoURI);
 
         const characters = await Character.find();
         res.status(200).json(characters);
@@ -77,10 +71,7 @@ const getCharacterById = async (req, res) => {
     const { id } = req.params;
 
     try {
-        await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(mongoURI);
 
         const character = await Character.findOne({ id });
 
@@ -101,10 +92,7 @@ const deleteCharacterById = async (req, res) => {
     const { id } = req.params;
 
     try {
-        await mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(mongoURI);
 
         const result = await Character.deleteOne({ id });
 
