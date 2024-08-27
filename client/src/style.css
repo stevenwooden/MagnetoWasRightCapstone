@@ -99,6 +99,17 @@ h1 {
     padding: 10;
     color:#721CB8
 }
+.form{
+    margin: 3%;
+    border: #721CB8 solid 1px;
+    padding: 2%;
+
+}
+.formInputs{
+    margin: 1%;
+    font-family: 'Anton SC', sans-serif;
+}
+
 @media screen and (max-width: 992px){
     .feature {
         display: block;

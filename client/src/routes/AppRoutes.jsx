@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import CharacterBio from "../pages/CharacterBio";
 import BlogPage from "../pages/BlogPage";
-// import ShopPage from "../pages/ShopPage";
+import SubmitContent from "../pages/SubmitContent";
 
 
 function AppRoutes(props) {
@@ -15,7 +15,7 @@ function AppRoutes(props) {
 
             <Route path="/blog" element = {<BlogPage {...props}/>}/>
 
-            {/* <Route path="/shop" element = {<ShopPage {...props}/>}/> */}
+            <Route path="/submit-content" element = {<SubmitContent {...props}/>}/>
 
 
         </Routes>

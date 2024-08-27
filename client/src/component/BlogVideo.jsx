@@ -4,7 +4,7 @@ import { useState } from 'react'
 import CommentBox from './CommentBox';
 
 
-function BlogVideo({image, video, caption, buttonText}){
+function BlogVideo({image, video, title, buttonText}){
     
     const [currentvideo, setCurrentVideo] = useState('');
 
@@ -29,7 +29,7 @@ function BlogVideo({image, video, caption, buttonText}){
             <div >
                 {content}
             </div>
-            <h4 className="caption"> {caption}</h4> 
+            <h4 className="caption"> {title}</h4> 
             <Button variant='primary'  onClick={handleVideo} >{buttonText}</Button>    
             
             <CommentBox/>

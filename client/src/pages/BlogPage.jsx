@@ -15,24 +15,24 @@ export default function BlogPage(){
         <BlogVideo
             video="https://www.youtube.com/embed/73_1biulkYk?si=bAuQOCeviU4THOoU"
             image="/assets/images/Deadpool-Wolverine-1.jpg"
-            caption='Check out this new trailer for Deadpool and Wolverine!'
+            title='Check out this new trailer for Deadpool and Wolverine!'
             buttonText='Click Here to Watch!'
         />
         <BlogVideo
             video="https://www.youtube.com/embed/pv3Ss8o9gGQ"
             image="/assets/images/x-men97.png"
-            caption="Check out this trailer for X-MEN 97 and watch on Disney +"
+            title="Check out this trailer for X-MEN 97 and watch on Disney +"
             buttonText="Click Here to Watch!"
         />
         <BlogArticle 
             image = "/assets/images/blueteamgoldteam.jpg"
             link= "https://www.marvel.com/articles/comics/x-men-blue-gold-team-history-explained"
-            caption="Do you want to know more about the history of the lengendary Blue and Gold Teams of the X-MEN!!"
+            title="Do you want to know more about the history of the lengendary Blue and Gold Teams of the X-MEN!!"
         />
         <BlogArticle
             image="/assets/images/x-menadapt.jpg"
             link= "https://gamerant.com/mcu-x-men-movie-adapt-x-men-blue-gold/"
-            caption= 'Should the MCU adapt this very famous storyline into a movie?'
+            title= 'Should the MCU adapt this very famous storyline into a movie?'
         />
         </Container>
         </main>
