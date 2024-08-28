@@ -100,16 +100,18 @@ h1 {
     color:#721CB8
 }
 .form{
-    margin: 3%;
-    border: #721CB8 solid 1px;
-    padding: 2%;
+    padding: 3%;
+    background-color: lightgray;
 
 }
 .formInputs{
-    margin: 1%;
+    
     font-family: 'Anton SC', sans-serif;
+    
 }
-
+.formSubject{
+    margin:3% ;
+}
 @media screen and (max-width: 992px){
     .feature {
         display: block;
@@ -117,8 +119,12 @@ h1 {
         margin:  auto;
         margin-bottom: 2%;
     }
-    
 }
-@media screen {
-    
+@media screen and (min-width:992px){
+    .contentPic {
+        width: 100%;
+    }
+    .form {
+        width: 100%;
+    }
 }

@@ -1,7 +1,7 @@
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
-import CommentBox from './CommentBox';
+// import CommentBox from './CommentBox';
 
 
 function BlogVideo({image, video, title, buttonText}){
@@ -32,7 +32,7 @@ function BlogVideo({image, video, title, buttonText}){
             <h4 className="caption"> {title}</h4> 
             <Button variant='primary'  onClick={handleVideo} >{buttonText}</Button>    
             
-            <CommentBox/>
+            {/* <CommentBox/> */}
         </div>
     ) 
 };
