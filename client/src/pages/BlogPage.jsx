@@ -5,15 +5,24 @@ import { useEffect, useState } from "react"
 
 
 export default function BlogPage(){
+    // const [posts, setPosts] = useState([]);
+
+    // useEffect(() => {
+    //   // Fetch blog data from the server
+    //     fetch('http://localhost:8080/api/posts')
+    //         .then(response => response.json())
+    //         .then(data => setPosts(data))
+    //         .catch(error => console.error('Error fetching blog posts:', error));
+    // }, []);
+
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-      // Fetch blog data from the server
-        fetch('http://localhost:3000/api/posts')
+    useEffect(()=> {
+        fetch('/data/magneto_was_right.posts.json')
             .then(response => response.json())
-            .then(data => setPosts(data))
-            .catch(error => console.error('Error fetching blog posts:', error));
+            .then(data => setPosts(data));  
     }, []);
+
 
     return(
         <main>

@@ -3,7 +3,7 @@ const router = express.Router();
 const postController = require('../controllers/postController');
 
 // CRUD routes for posts
-router.post('/createposts', postController.createPost);
+router.post('/posts/create', postController.createPost);
 router.get('/posts', postController.getPosts);
 router.get('/posts/:id', postController.getPostById);
 router.put('/posts/:id', postController.updatePost);

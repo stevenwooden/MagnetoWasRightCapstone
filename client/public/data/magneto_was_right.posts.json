@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "66cd445451064ebdd4e0b6fc"
+  },
+  "video": "https://www.youtube.com/embed/73_1biulkYk?si=bAuQOCeviU4THOoU",
+  "image": "/assets/images/Deadpool-Wolverine-1.jpg",
+  "title": "Check out this new trailer for Deadpool and Wolverine!",
+  "date": {
+    "$date": "2024-08-27T03:13:24.056Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ce3325da34d29b6f24fef8"
+  },
+  "video": "https://www.youtube.com/embed/73_1biulkYk?si=bAuQOCeviU4THOoU",
+  "image": "/assets/images/Deadpool-Wolverine-1.jpg",
+  "title": "Check out this new trailer for Deadpool and Wolverine!",
+  "date": {
+    "$date": "2024-08-27T20:12:21.912Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ce3353da34d29b6f24fefa"
+  },
+  "video": "https://www.youtube.com/embed/pv3Ss8o9gGQ",
+  "image": "/assets/images/x-men97.png",
+  "title": "Check out this trailer for X-MEN 97 and watch on Disney +",
+  "date": {
+    "$date": "2024-08-27T20:13:07.947Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ce3362da34d29b6f24fefc"
+  },
+  "link": "https://www.marvel.com/articles/comics/x-men-blue-gold-team-history-explained",
+  "image": "/assets/images/blueteamgoldteam.jpg",
+  "title": "Do you want to know more about the history of the lengendary Blue and Gold Teams of the X-MEN!!",
+  "date": {
+    "$date": "2024-08-27T20:13:22.393Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ce336eda34d29b6f24fefe"
+  },
+  "link": "https://gamerant.com/mcu-x-men-movie-adapt-x-men-blue-gold/",
+  "image": "/assets/images/x-menadapt.jpg",
+  "title": "Should the MCU adapt this very famous storyline into a movie?",
+  "date": {
+    "$date": "2024-08-27T20:13:34.468Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cfbcb1fa532187b7746d6d"
+  },
+  "date": {
+    "$date": "2024-08-29T00:11:29.760Z"
+  },
+  "__v": 0
+}]

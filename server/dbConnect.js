@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config()
 const Mongoose = require('mongoose');
 // if the connection fails, try 127.0.0.1 instead oflocalhost below
 

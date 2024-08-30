@@ -119,8 +119,9 @@ h1 {
         margin:  auto;
         margin-bottom: 2%;
     }
+    
 }
-@media screen and (min-width:992px){
+@media screen and (min-width:768px){
     .contentPic {
         width: 100%;
     }

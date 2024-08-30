@@ -16,7 +16,7 @@ export default function SubmitContent(){
             <Container className="formSubject">
                 <Row>
                     <Col>
-                        <Image src="/assets/images/russell_dauterman_x-men_legends_cover.jpg" alt="stature" className="contentPic"/>
+                        <Image fluid src="/assets/images/russell_dauterman_x-men_legends_cover.jpg" alt="stature" className="contentPic"/>
                     </Col>
                     <Col className="form">
                         <ContentForm/>
