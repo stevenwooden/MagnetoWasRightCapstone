@@ -28,7 +28,7 @@ li.a{
     /* margin-top: 5%; */
 }
 h1 {
-    font-size: 5vw;
+    font-size: 3vw;
     font-family: 'Anton SC', sans-serif;
 }
 .charList {
@@ -42,7 +42,7 @@ h1 {
 
 }
 .message {
-    font-size: 2vw ;
+    
     margin: 10px;
     padding: 30px
 }
@@ -109,9 +109,7 @@ h1 {
     font-family: 'Anton SC', sans-serif;
     
 }
-.formSubject{
-    margin:3% ;
-}
+
 @media screen and (max-width: 992px){
     .feature {
         display: block;

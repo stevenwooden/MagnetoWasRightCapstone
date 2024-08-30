@@ -3,7 +3,7 @@
 function HomeHeader() {
     return (
         
-        <main className="main-index">
+        <main className="main-index" style={{float:"left", width:"100%"}}>
             
             <div className="row background">        
                 <div className="col-lg-6">

@@ -21,16 +21,16 @@ function BlogVideo({image, video, title, buttonText}){
 
     } else {
         content = (
-            <Image fluid rounded src={image} style={{width:" 100%"}} alt="video"/>
+            <Image fluid rounded src={image} style={{width:" 75%"}} alt="video"/>
         )
     }
     return (
-        <div className="blog video">
+        <div className="blog video" style={{borderBottom:"solid lightgray 1px"}}>
             <div >
                 {content}
             </div>
             <h4 className="caption"> {title}</h4> 
-            <Button variant='primary'  onClick={handleVideo} >{buttonText}</Button>    
+            <Button variant='primary' style={{margin:6}} onClick={handleVideo} >{buttonText}</Button>    
             
             {/* <CommentBox/> */}
         </div>
