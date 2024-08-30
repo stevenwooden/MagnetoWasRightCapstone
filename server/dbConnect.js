@@ -7,7 +7,10 @@ const mongoURI = process.env.DB_URI || "mongodb://localhost:27017/magneto_was_ri
 
 // Connect to MongoDB
 
-Mongoose.connect(mongoURI)
+Mongoose.connect(mongoURI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 .then(() => console.log('MongoDB Connected'))
 .catch(error => console.log('MongoDB Error:'+error.message));
 // Get the default connection
