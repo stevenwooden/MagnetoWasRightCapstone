@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const dbConnect = require("./dbConnect");
 const cors = require('cors');
-// const characterRoutes = require("./routes/characterRoutes");
+const characterRoutes = require("./routes/characterRoutes");
 const postRoutes = require("./routes/postRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 
@@ -13,7 +13,7 @@ app.use(cors({
     origin: 'http://localhost:5173'
 }));
 app.use(express.json());
-// app.use('/api/character', characterRoutes);
+app.use('/api', characterRoutes);
 app.use('/api', postRoutes);
 app.use('/api', commentRoutes);
 

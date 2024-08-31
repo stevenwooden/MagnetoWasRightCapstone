@@ -49,19 +49,14 @@ h1 {
 }
 .feature {
     width: 100%;
-    
-    border: #721CB8 solid 2px;
-    padding: 2%;
-    margin-bottom: 2%;
+    border: #721CB8 solid 1px;
+    padding: 2%
 
     /* margin-left: 10%; */
 }
- .section-index {
-    margin: 10%;
 
-} 
 .main-index {
-    margin-top:10% %;
+    /* margin-top:10% ; */
     
 }
 .blog {
