@@ -1,4 +1,4 @@
-<h1>Hello All and Welcome to Magnet Was Right</h1>
+<h1>Hello All and Welcome to Magneto Was Right</h1>
 Magneto Was Right is a platform for X-Men enthusiasts, which offers character bios, blog posts, and fan art. If you want to get to know about the different characters of the mutant universe, want to know what's new in the world of X-Men, or just want to share your own interest and art, this app provides a platform for you to express it. 
 <br></br>
 <h2>Purpose</h2>
