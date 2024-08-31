@@ -21,7 +21,6 @@ export default function BlogPage(){
         fetch('http://localhost:6060/api/posts')
             .then(response => response.json())
             .then(data => setPosts(data));  
-            .catch(error => console.error('Error fetching post',error));
     }, []);
 
 
