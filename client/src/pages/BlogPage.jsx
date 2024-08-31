@@ -18,7 +18,7 @@ export default function BlogPage(){
     const [posts, setPosts] = useState([]);
 
     useEffect(()=> {
-        fetch('/data/magneto_was_right.posts.json')
+        fetch('http://localhost:6060/api/posts')
             .then(response => response.json())
             .then(data => setPosts(data));  
     }, []);
