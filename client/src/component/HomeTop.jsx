@@ -6,8 +6,9 @@ import Row from "react-bootstrap/Row"
 function HomeTopSection(){
     return(
         <div>
-            <HomeImage/>
+            
             <HomeHeader/>
+            <HomeImage/>
             
         </div>
     )

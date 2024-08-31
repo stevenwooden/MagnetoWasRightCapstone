@@ -6,7 +6,7 @@ function HomeHeader() {
         <main className="main-index" style={{float:"left", width:"100%"}}>
             
             <div className="row background">        
-                <div className="col-lg-6">
+                <div className="col-lg-6 welcome">
                     <h1 >Welcome All Fellow Mutants and Defenders of Mutantkind</h1>  
                 </div>
                 <div className="col-lg-6">          

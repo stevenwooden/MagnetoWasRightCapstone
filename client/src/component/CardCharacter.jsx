@@ -4,12 +4,14 @@ import Accordion from 'react-bootstrap/Accordion';
 function CardTemplate({character}) {
     return(
     <Card className='charCard'>
-        <Card.Img src={character.image} fluid variant="top" style={{height:' 16rem' ,objectFit:'cover'}} alt={character.alias}/>
+        <Card.Img src={character.image} variant="top" style={{height:' 16rem' ,objectFit:'cover'}} alt={character.alias}/>
         {/* <Card.Body style = {{textAlign:'center'}}> */}
             <Accordion>
                 <Accordion.Item eventKey='0'>
                     <Accordion.Header className='nameCard' >{character.alias}</Accordion.Header>
+                    <Accordion.Body>{character.name}</Accordion.Body>
                     <Accordion.Body>{character.powers}</Accordion.Body>
+                    <Accordion.Body>{character.description}</Accordion.Body>
                 </Accordion.Item>
             </Accordion>
             {/* <Card.Title>{character.alias}</Card.Title>

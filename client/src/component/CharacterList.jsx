@@ -6,9 +6,9 @@ import Container from "react-bootstrap/esm/Container";
 
 function CharacterList(){
     const [characters, setCharacters] = useState([]);
-
+    const apiURL = import.meta.env.VITE_API_URL;
     useEffect(()=> {
-        fetch('/data/character.json')
+        fetch(`${apiURL}/characters`)
             .then(response => response.json())
             .then(data => setCharacters(data));  
     }, []);

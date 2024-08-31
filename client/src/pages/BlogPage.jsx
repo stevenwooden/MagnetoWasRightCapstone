@@ -7,9 +7,11 @@ import { useEffect, useState } from "react"
 export default function BlogPage(){
     const [posts, setPosts] = useState([]);
 
+
+    const apiURL = import.meta.env.VITE_API_URL;
     useEffect(() => {
       // Fetch blog data from the server
-        fetch('http://localhost:6060/api/posts')
+        fetch(`${apiURL}/posts`)
             .then(response => response.json())
             .then(data => setPosts(data))
             .catch(error => console.error('Error fetching blog posts:', error));
@@ -46,7 +48,9 @@ export default function BlogPage(){
                 image={post.image}
                 link={post.link}
                 title={post.title}
-                buttonText="Click Here to Read!"
+                buttonText={post.link}
+                author={post.author}
+                content={post.content}
                 />
             )
             ))}

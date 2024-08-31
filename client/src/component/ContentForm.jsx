@@ -1,37 +1,34 @@
 import React, { useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+import axios from 'axios';
 
 const ContentForm = () => {
+    const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
-    const [link, setLink] = useState('');
+    const [content, setContent] = useState('');
+    const [image, setImage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const postData = {
-            author,
-            link,
-        };
+        
+        const newPost = {
+        title,
+        author,
+        content,
+        image,
+        }
 
         try {
-            const response = await fetch('/data/magneto_was_right.posts.json', {
-                method: 'POST',
-                body: JSON.stringify(postData),
-            });
-
-            if (response.ok) {
-                alert('Post added successfully!');
-                // Reset form fields
-                setAuthor('');
-                setLink('');
-            } else {
-                throw new Error('Failed to add post');
-            }
+        const response = await axios.post('http://localhost:8080/api/posts/create', newPost);
+        console.log(response.data.message);
+        // Reset form fields
+        setTitle('');
+        setAuthor('');
+        setContent('');
+        setImage('');
         } catch (error) {
-            console.error('Error adding post:', error);
-            alert('Failed to add post. Please try again.');
+        console.error('Error submitting content:', error.response?.data?.error || error.message);
         }
     };
 
@@ -48,14 +45,35 @@ const ContentForm = () => {
         </Form.Group>
 
         <Form.Group className="formInputs" controlId="formLink">
-            <Form.Label>Link</Form.Label>
+            <Form.Label>Image</Form.Label>
             <Form.Control
             type="text"
-            placeholder="Enter external link"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
+            placeholder="Enter image url here"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
             />
         </Form.Group>
+
+        <Form.Group className="formInputs" controlId="formLink">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="Enter Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            />
+        </Form.Group>
+
+        <Form.Group className="formInputs" controlId="formLink">
+            <Form.Label>Content</Form.Label>
+            <Form.Control
+            type="text"
+            placeholder="Say what you want"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            />
+        </Form.Group>
+
         <Button variant="primary" type="submit" style={{marginTop: 10}}>
             Submit
         </Button>
