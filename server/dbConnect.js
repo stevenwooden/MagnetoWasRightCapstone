@@ -3,7 +3,7 @@
 const Mongoose = require('mongoose');
 // if the connection fails, try 127.0.0.1 instead oflocalhost below
 
-const mongoURI = process.env.DB_URI || "mongodb://localhost:27017/magneto_was_right";
+const mongoURI = process.env.DB_URI || "mongodb://localhost/magneto_was_right";
 
 // Connect to MongoDB
 
